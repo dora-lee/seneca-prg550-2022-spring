@@ -352,11 +352,11 @@ If the number is positive, we print an appropriate message
 ```
 xValue = 3
 yValue = -2
-if xValue &gt;= 0 :
+if xValue >= 0 :
    print(xValue, "is a positive number!")
 print("This is always printed.")
 
-if yValue &gt;= 0 :
+if yValue >= 0 :
     print(yValue, "is a positive number!")
 else :
     print(yValue, "is a negative number!")
@@ -365,9 +365,9 @@ print("This is also always printed.")
 ```
 <img src="images/if_elif_else_statement.jpg" width="412" height="407" />
 ```
-if xValue &gt;= 0 :
+if xValue >= 0 :
    print(xValue, "is a positive number!")
-elif yValue &gt;= 0 :
+elif yValue >= 0 :
     print(yValue, "is a positive number!")
 else :
     print("both", xValue, "and", yValue, "are negative numbers!")
@@ -376,11 +376,11 @@ else :
 
 Example using logical operators and / or
 ```
-if xValue &gt;= 0 and yValue &gt;= 0 :
+if xValue >= 0 and yValue &gt;= 0 :
     print("both", xValue, "and", yValue, "are positive numbers!")
-elif xValue &gt;= 0 :
+elif xValue >= 0 :
    print(xValue, "is a positive number!")
-elif yValue &gt;= 0 :
+elif yValue >= 0 :
    print(yValue, "is a positive number!")
 else :
    print("both", xValue, "and", yValue, "are negative numbers!")
@@ -403,7 +403,7 @@ else :
 # end if
 ```
 
-alternate example of logic above
+alternate example of logic above (refer to [Python 3 operator precedence reference](https://docs.python.org/3/reference/expressions.html#operator-precedence))
 ```
 year = int(input("enter a whole number year: "))
 if year % 400 == 0 or year % 4 == 0 and year % 100 != 0 :
@@ -518,7 +518,7 @@ Examples:
 Program to compute the sum of consequtive natural numbers from 1 to n
 `sum = 1 + 2 + 3 + ... + n`
 ```
-n = int(input("Enter a whole number &gt; 0: "))
+n = int(input("Enter a whole number > 0: "))
 ```
 initialize `sum` and counter
 ```
@@ -544,7 +544,7 @@ Example:
 ```
 counter = 0
 
-while counter &lt; 20:
+while counter < 20:
    print("Inside loop counter is:", counter)
    counter = counter + 1
 else:

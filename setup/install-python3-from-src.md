@@ -156,14 +156,19 @@ You can now test your system by running the following commands:
 ```
 python3 -V
 whereis python3
+which python3
 ```
 
 If you see the following message then you've properly compiled and installed Python on your Raspberry Pi!
 ```
 /home/pi> python3 -V
 Python 3.9.9
+
 /home/pi> whereis python3
 python3: /usr/bin/python3.9 /usr/bin/python3 /usr/bin/python3.9-config /usr/lib/python3.9 /usr/lib/python3 /etc/python3.9 /etc/python3 /usr/local/lib/python3.9 /usr/include/python3.9 /usr/include/python3.9m /usr/share/python3 /usr/share/man/man1/python3.1.gz
+
+/home/pi >which python3
+/home/pi/software/bin/python3
 ```
 
 Congratulations, that's it!

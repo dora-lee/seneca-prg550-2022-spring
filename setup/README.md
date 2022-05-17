@@ -9,3 +9,4 @@
 1. [Install and build Python3 on the Raspberry Pi](install-python3-from-src.md)
 
 
+1. (Optional) [Setup VSCode remote editing](vscode_rpi_remote_edit.md)

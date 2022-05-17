@@ -21,9 +21,10 @@ Before beginning to image the Raspberry Pi review [video](https://www.youtube.co
 
 1. Configure the imager via gear icon <img src="images/raspberry-pi-imager-config-gear.png" width="50">
 1. Image customization options: "to always use"
+1. Select *Set hostname*: `rpi-<your student username>.local` <-- create unique hostname for connecting at the lab
 1. Select *Enable SSH*: "Use password authentication"
 1. Select *Set username and password*: username=pi, choose password
-1. Select *Configure wireless LAN*: SSID=raspberrypi, choose password, 
+1. Select *Configure wireless LAN*: SSID=<wifi networkid>, <wifi network pw>, 
 1. Set the remaining options to:
     ```
     Wireless LAN country:   CA

@@ -50,13 +50,11 @@ All variable names in Python must adhere to the following rules:
    distinct variables.
 
 ## Python conventions
-1. Please adhere to the use of camelCase when declaring variable names
-   (where names that that are comprised of separate words use initial
-   capitals starting with the 2nd word)
-   (i.e. `totalPrice`, `speedOfLight`, `dnaSequenceOne`, `imageRotation`, etc.)
+1. Please adhere to the [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/) 
+    when coding and declaring variable names
+   (i.e. `total_price`, `speed_of_light`, `dna_sequence_main`, `image_rotation`, etc.)
 
- 2. Indenting is REQUIRED! In Python, code blocks are defined by their
-    indentation.
+ 2. In Python, code blocks are defined by their [indentation](https://peps.python.org/pep-0008/#indentation).
     A "code block" encompasses functions, if statements, for loops,
     while loops, etc. Indenting starts a block and unindenting ends it.
     There are no explicit braces, brackets, or keywords. This means

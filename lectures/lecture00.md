@@ -1,14 +1,22 @@
 <img src="../images/senecac.gif" alt="Seneca College" height="38" width="349" />
 
+# PRG550 Lecture #0
+Monday May 9, 2022
+
 ## Lecture Objectives
 
 - this lecture will provide a review of the Raspberry Pi
 - give the student motivation for learning Python
+- review instructions to prepare your PC and the Raspberry Pi to complete course requirements
 
 ## Page Contents
 
 - [The Raspberry Pi Single Board Computer](#the-raspberry-pi-single-board-computer)
 - [The Python Programming Language](#the-python-programming-language)
+- [Why Python?](#why-python)
+- [Setup your Raspberry Pi](#setup-your-raspberry-py)
+- [Creating and running your first Python program](#creating-and-running-your-first-python-program)
+
 
 ----------------------------------
 
@@ -118,23 +126,35 @@ Advantages of using Python
 6. Can be written procedurally or using Object-Oriented constructs.
 7. Allows for simple Rapid Application Development (RAD).
 
-Python 3 documentation and tutorial:
-<a href="https://docs.python.org/3/" target="_blank">https://docs.python.org/3/</a>
+[Python 3 References](../README.md#references)
+- [official documentation](https://docs.python.org/3/)
+- [tutorial](https://www.w3schools.com/python/default.asp)
 
 # Why Python?
 
-- Data science
-    - R vs Python
-- Machine learning 
-    - sklearn
-    - tensorflow
-    - pytorch
+- Data science with Python
+    - [handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+    - [pandas](https://pandas.pydata.org/docs/user_guide/index.html)
+    - [numpy](https://numpy.org/doc/stable/user/quickstart.html)
+- Gateway to Machine learning 
+    - [scikit-learn](https://scikit-learn.org/stable/)
+    - [tensorflow](https://www.tensorflow.org/resources/learn-ml)
+    - [pytorch](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
+- [Python Zen](https://peps.python.org/pep-0020/)
+
+# Setup your Raspberry Pi
+
+Follow [set up tooling](../setup/README.md) references to configure and install tools for your Raspberry Pi
 
 # Creating and running your first Python program
 
-(Assume platform=Raspberry Pi and install directory is `/home/pi/workspace`)
+(Assume platform=Raspberry Pi and working directory is `/home/pi/workspace`)
 ```
 #!/home/pi/workspace
-
+import platform
 print("Welcome to PRG550 and Hello Python World!\n")
+print("You're using Python version {0}".format(platform.python_version()) )
 ```
+
+
+

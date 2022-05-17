@@ -30,6 +30,7 @@ This is the course home page for **Programming Python with the Raspberry Pi** wi
 1. [Summer 2022 Course Outline](https://www.senecacollege.ca/ssos/findOutline.do?isLoggedIn=&subjectOrAndTitle=%5BPRG550%5D+Programming+Python+with+the+Raspberry+Pi&schoolCode=0s572187)
 1. [Raspberry Pi Beginners Guide](references/RaspberryPi_BeginnersGuideV2.pdf)
 1. Python
-    - [Keyword Reference](references/python_keywords.md)
-    - [Cheat Sheet](references/pythonRefSheet.pdf)
+    - [Official Documentation](https://docs.python.org/3/)
+    - [Cheat Sheet](references/pythonRefSheet.pdf), [Keyword Reference](references/python_keywords.md)
+    - [Tutorial](https://www.w3schools.com/python/default.asp)
     - [Tricks and Tips](references/Tips_and_Tricks.md)

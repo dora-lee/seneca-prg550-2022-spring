@@ -292,7 +292,7 @@ print(powers_of_two_more_than_five) # displays: [64, 128, 256, 512]
 odd_numbers = [x for x in range(20) if x % 2 == 1]
 print(odd_numbers) # displays: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 ```
-With nested statements, the _innermost_ statement is on the left (ie read list comprehension from right-to-left)
+With nested statements, the _outermost_ statement is on the left (ie helpful to read code from right-to-left)
 ```
 nested_comprehension = [x + y for x in ['Python ','C '] for y in ['Language', 'Programming']]
 print(nested_comprehension) # displays: ['Python Language', 'Python Programming', 'C Language', 'C Programming']
@@ -300,18 +300,18 @@ print(nested_comprehension) # displays: ['Python Language', 'Python Programming'
 Alternate code to the above:
 ```
 output = []
-for y in ['Language', 'Programming']:
-    for x in ['Python ','C ']:
+for x in ['Python ','C ']:
+    for y in ['Language', 'Programming']:
         output.append(x+y)
 ```
-What will these statements return?
+What will these statements return?  Why?
 ```
 output==nested_comprehension
 output[0]==nested_comprehension[0]
 ```
 
-
-Indexing into a 2-dimensional array.  By convention with 2d and 3d arrays, the first index to the row, the second index refers to the column
+#### Indexing into a 2-dimensional array
+By convention with 2d arrays, the first index refers to the row, the second index refers to the column
 
 ![](images/python-list-indexing04.png)
 
@@ -416,7 +416,7 @@ mixed_dictionary = { 'name' : 'Sally',  2 : [3, 6, 9] }
 ```
 Creating dictionaries using built-in `dict()` function:
 ```
-courses = dict({ prg155 : 'C Programmming', prg550 : 'Python Programming' })
+courses = dict({ 'prg155' : 'C Programmming', 'prg550' : 'Python Programming' })
 ```
 Creating dictionaries using built-in `zip()` function:
 ```
@@ -425,6 +425,13 @@ city = ["toronto", "tokyo","new york", "paris","san francisco"]
 
 airport_codes = dict(zip(iata_identifier, city))
 ```
+What's the output from this code?  Why?
+```
+iata_identifier = ["yyz", "nrt", "jfk", "cdg"]
+city = ["toronto", "tokyo","new york", "paris","san francisco"]
+airport_codes = dict(zip(iata_identifier, city))
+```
+
 Creating dictionaries with default values:
 ```
 my_keys = ['w', 'x', 'y', 'z']

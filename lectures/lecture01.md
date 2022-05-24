@@ -364,6 +364,7 @@ else :
 print("This is also always printed.")
 ```
 <img src="images/if_elif_else_statement.jpg" width="412" height="407" />
+
 ```
 if xValue >= 0 :
    print(xValue, "is a positive number!")

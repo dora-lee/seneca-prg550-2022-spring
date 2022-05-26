@@ -14,7 +14,6 @@ Tuesday May 24, 2022 and Wednesday May 25, 2022
 - Python version 3.9.9 installed on your computer and on Raspberry Pi
     check Python version with `python -V`
 
-
 ## Page Contents
 - [Python Functions](#Python-Functions)
     - [Function Arguments in Python](#Function-Arguments-in-Python)
@@ -84,11 +83,7 @@ def compute_primes(lower, upper):
             print(num, end=" ") only displays if for loop runs to completion
             without a break;
             total_primes += 1
-        end for
-      end if
-   end for
    return total_primes
-end function
 
 lower = int(input("Enter lower range: "))
 upper = int(input("Enter upper range: "))
@@ -175,12 +170,15 @@ Calculate the sum
 print("improved_sum: ",  improved_sum(1, 4, 5,  99))
 ```
 
+Note that `pargs` passed into the function is of type `tuple`
+
+
 Python also allows for a variable number of keyword arguments, typically defined using `**kwargs`.  The double asterisk (**) is placed before the variable name that contain values of all keyword arguments.   Here is an example with variable keyword arguments:
 ```
-def another_improved_sum(**kargs):
+def another_improved_sum(**kwargs):
     sum = 0
-    print("input keyword arguments", kargs)
-    for (k, v) in kargs.items():
+    print("input keyword arguments", kwargs)
+    for (k, v) in kwargs.items():
         sum += v
     return sum
 ```
@@ -189,6 +187,7 @@ Calculate sum:
 print(another_improved_sum(a=2, b=2))
 ```
 
+Note that `kwargs` passed into the function is of type `dict`
 
 ## Python Lamba functions
 
@@ -248,18 +247,18 @@ In short, `lambda` is designed for coding simple functions and `def` handles com
 
 ## Functional Programming Tools
 
-Python provides support for multiple programming paradigms: procedural (with its basic statements), object-oriented (with its classes), and functional. For the latter of these, Python includes a set of built-ins used for functional
-programming—tools that apply functions to sequences and other iterables. This set
+Python provides support for multiple programming paradigms: procedural (with its basic statements), object-oriented (with its classes), and functional. For the latter of these, Python includes a set of built-ins functions that operate on sequences and other iterables. This set
 includes tools that:
 
-- call functions on an iterable’s items (`map`); 
+- operate on an iterable’s items (`map`); 
 - filter out iterable items based on a test function (`filter`); 
-- apply functions to pairs of iterable items and running results (`reduce`).
+- apply a functions to pairs of iterable items and running results to produce a single cumulative result (`reduce`).
+
+Essentially `map`, `filter`, `reduce` work similar to a `for` loop that iterates over a sequence (or iterable) to manipulate each element.
 
 ### The `map()` Function
-The advantage of the `lambda` operator can be seen when it is used in
-combination with the `map()` function.
 
+The `map()` function takes an input sequence, transforms each element, and outputs an iterable.
 `map()` is a function with two arguments:
 ```
 r = map(func, seq)
@@ -268,68 +267,98 @@ r = map(func, seq)
 The first argument `func` is the name of a function and the second
 argument `seq` is a sequence (e.g. a list). The `map()` function
 applies the function `func` to all the elements of the sequence `seq`.
-`map()` returns a new list with the elements changed by the function
-`func`.
+`map()` returns an iterable map object with the elements changed by the function
+`func`.  The signature of `func` should match `seq`
 
-`map()` can be applied to more than one list, however, the lists have
-to have the same length. `map()` will apply its lambda function to the
-elements of the argument lists, (i.e. it first applies to the elements
-at index 0, then to the elements at index 1, until the n-th index
-is reached:
+`map()` will apply the provided `func` to the elements of the argument list,
+(i.e. it first applies to the elements at index 0, then to the elements at index 1,
+until the n-th index is reached
+
+For example, to double the value of a sequence:
 ```
-a = [1, 2, 3, 4]
-b = [17, 12, 11, 10]
-c = [-1, -4, 5, 9]
+a_list = [1, 2, 3, 4]
+
+def double(x):
+    return 2*x
+
+map_result = map(double, a_list) # map_result is an iterable
+print(map_result)
+
+print(list(map_result)) # list() to create list from iterable
+```
+
+The advantage of the `lambda` operator can be seen when it is used in
+combination with the `map()` function to produce more compact code.
+```
+map_result = map(lambda x: 2*x, a_list))
+print(list(map_result))
+```
+
+`map()` can be applied to more than one list, however, the lists should have the same length. 
+
+```
+a_list = [1, 2, 3, 4]
+b_list = [17, 12, 11, 10]
+c_list = [-1, -4, 5]
 ```
 ```
 m1 = map(lambda x, y : x + y, a, b)            # displays [18, 14, 14, 14]
-print(list(m1)) # must display as a list because map() returns an object
+print(list(m1)) # must display as a list because map() returns an iterable
 ```
-In the example above, `lambda x, y : x + y` is the lambda function,
-where `x`, `y` are the arguments and `x + y` is the expression that gets
-evaluated and returned.
 
-The function itself has no name. It returns a function object which
+In the example above, `lambda x, y : x + y` is the lambda function taking two arguments `x` and `y`.  
+The expression `x + y` is evaluated and its value returned.
+
+The function itself has no name (ie anonymous) and temporary. It returns a function object which
 is assigned to the identifier `m1`.
+
+This lambda function takes in three arguments
 ```
-m2 = map(lambda x, y, z : x + y + z, a, b, c)  # displays [17, 10, 19, 23]
+m2 = map(lambda x, y, z : x + y + z, a_list, b_list, c_list)  # what is this result?
 print(list(m2))
-```
-```
-m3 = map(lambda x, y, z : x + y - z, a, b, c)  # displays [19, 18, 9,   5]
-print(list(m3))
 ```
 
 ### The `filter()` Function
 
 As with the `map()` function, the `filter()` function in Python also accepts
-a function and a list as arguments.
+a function and a sequence as arguments.
 
 The `filter()` function offers an elegant way to filter out all the elements
 of a sequence for which the function returns `True`
 
-- (i.e. an item will be produced by the iterator result of `filter(function, sequence)`
-if the item is included in the sequence and if `function(item)` returns `True`).
-- In other words: the function `filter(func, items)` needs a function `func` as
-its first argument and `func` has to return a Boolean value (i.e. either
-`True` or `False`.) This function will be applied to every element of the
-list `items`. Only if `func` returns `True` will the element be produced by
-the iterator, which is the return value of `filter(func, items)`.
+```
+r = filter(func, seq)
+```
+`filter` applies `func` to each element in `seq` and returns `True` or `False`.  
+Elements that returns `False` will be excluded in the returned iterator `r`
 
-`filter()` returns an iterable, similar to the `range()` function
+`filter()` returns an iterable filter object
 
 In the example below, the filter() function is used to to filter out
 only even numbers from a list.
+
 ```
 random_list = [1, 5, 4, 6, 8, 11, 3, 12, 11, 9, 88]
+
+def is_even_number(x):
+    return (x % 2 == 0) # True for even numbers
+
+even_result = filter(is_even_number , random_list)
+print(even_result)
+
+print(list(even_result))    # displays[4, 6, 8, 12, 88]
 ```
+
+Similar with `map()` using an anonymous function results in more compact and readble code:
 ```
 even_list = list(filter(lambda x : (x % 2 == 0) , random_list))
 print(even_list)    # displays[4, 6, 8, 12, 88]
 ```
+
+Here we apply a filter to produce odd numbers:
 ```
 fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-odd_numbers = list(filter(lambda x : x % 2, fibonacci))
+odd_numbers = list(filter(lambda x : x % 2, fibonacci))  # x % 2 is True for odd numbers
 print(odd_numbers)
 ```
 
@@ -337,11 +366,12 @@ print(odd_numbers)
 ```
 reduce(func, seq)
 ```
-The `reduce()` function (which now requires that it be imported from the
-`functools` module) continually applies the function func to the sequence `seq`.
-It returns a single value.
+The `reduce()` function repeatedly applies the function `func` to the sequence `seq` and returns a single value. 
+`reduce()` is part of the `functools` module.
 
-For `seq = [ s1, s2, s3, ... , sn ]`, calling `reduce(func, seq)` works as:
+The signature of `func` takes in two arguments and returns a single value of the same type.
+
+For `seq = [ s1, s2, s3, ... , sn ]`, calling `reduce(func, seq)` works as follows:
 - The first two elements of `seq` will be passed to `func`
 (i.e. `func(s1, s2)` ). The list on which `reduce()` works, now is:
 `[ func(s1, s2), s3, ... , sn ]`
@@ -351,19 +381,49 @@ third element of the list (i.e. `func(func(s1, s2),s3)` )
 - This process continues until just one element is left and this element
 is ultimately returned.
 
-Example, determining the largest value in a list:
+Example, to sum all values in a list:
+```
+from functools import reduce
+a_list = [1, 2, 3, 4]
+
+def my_sum(x,y):
+    return x+y
+
+sum_result = reduce(my_sum, a_list)
+print(sum_result)
+```
+Same result using anonymous function:
+```
+from functools import reduce
+sum_result = reduce(lambda x,y: x+y, a_list)
+print(sum_result)
+```
+
+Example, to determine the largest value in a list:
+```
+from functools import reduce
+def get_largest(a,b):
+    return a if (a > b) else b
+
+result = reduce(get_largest, [47, 115, 42, 102, 13])
+print(result) # displays 115
+```
+
+Here, we give the anonymous function the name `func` by assigning the result of `lambda` to a variable
 ```
 from functools import reduce
 func = lambda a, b : a if (a > b) else b
 result = reduce(func, [47, 115, 42, 102, 13])
 print(result) # displays 115
 ```
+
 Another way of coding the above:
 ```
 from functools import reduce
 result = reduce(lambda a, b : a if (a > b) else b, [47, 115, 42, 102, 13])
 print(result) # displays 115
 ```
+
 Example, calculating the sum of the numbers from 1 to 100:
 ```
 print(reduce(lambda x, y : x + y, range(1, 101)))

@@ -261,41 +261,52 @@ the exception immediately otherwise it terminates and quits.
 ### Handling an exception
 When writing Python code that may raise an exception, the program can
 be written in a defensive manner by placing the suspicious/potentially
-problematic code in a try : block. After the try : block an except :
+problematic code in a `try` block. After the `try` block, an `except`
 block of code is written that handles the problem as elegantly as possible.
 Exception handling syntax:
 ```
-try :
+try:
    # suspicious/potentially problematic code...
 
-except Exception1 :
+except Exception1:
    # if Exception1 occurs this block is executed.
 
-except Exception2 :
+except Exception2:
    # if Exception2 occurs this block is executed.
 
-else :
+except Exception3, Exception4, ..., ExceptionN:
+   # if Exception3 to ExceptionN occurs this block is executed.
+
+except:
+   # all other exceptions not specified above are handled here
+
+else:
    # if there is no exception then execute this block.
+
+finally:
+   # always execute this block 
 ```
 
 There are some important considerations regarding the exception
 handling example above.
-A single try statement may have multiple except statements
-which is useful if the try block contains statements that may
+- A single `try` statement may have multiple `except` statements
+which is useful if the `try` block contains statements that may
 throw different types of exceptions.
-It is also possible to provide a generic except clause, which
+- It is also possible to provide a generic except clause, which
 handles any exception.
-After the except clause(s), an els clause may be included.
-The code in the else block executes if the code in the try : block
+- After the `except` clause(s), an `else` clause may be included.
+The code in the `else` block executes if the code in the `try` block
 does not raise an exception.
+- The `finally` clause allows a block of code to run regardless whether there 
+is an error or not
 
-The example below opens a file, writes some content to the, file
+The example below opens a file, writes some content to the file
 and displays a completion message if no exception is encountered.
 ```
 try:
    fh = open("testfile.txt", "w")
    bytes = fh.write("This is a test file for exception handling!!")
-except IOError:
+except OSError:
    print("Error: Cannot open file for writing...")
 else:
    print("Successfully wrote", bytes, "bytes of data to the file...")
@@ -308,16 +319,15 @@ a completion message if no exception is encountered.
 try:
    fh = open("unknown.txt", "r")
    s = fh.readline()
-except IOError:
+except OSError:
    print("Error: Cannot open file for reading...")
 else:
    print("Successfully read '", s, "' from the file...")
    fh.close()
 ```
 
-The except clause with multiple exceptions:
-It is also possible to use the same except : statement to handle multiple
-exceptions.
+It is also possible to use the same `except` statement to handle multiple exceptions.
+
 Example:
 ```
 try:
@@ -330,12 +340,14 @@ else :
    # If there is no exception then execute this block.
 ```
 
-### Standard Python exceptions
+### Some Standard Python exceptions
+
+This table lists some exceptions that are commonly encountered.  See [Python Exceptions](https://docs.python.org/3.9/library/exceptions.html#exception-hierarchy) for a complete list.
+
 | Exception | Description |
-|:----|:----------------|
+|:----------|:----------------|
 | StopIteration       | Raised when the next() method of an iterator does not point to any object. |
 | SystemExit          | Raised by the sys.exit() function. |
-| StandardError       | Base class for all built-in exceptions except StopIteration and SystemExit. |
 | ArithmeticError     | Base class for all errors that occur for numeric calculation. |
 | OverflowError       | Raised when a calculation exceeds maximum limit for a numeric type. |
 | FloatingPointError  | Raised when a floating point calculation fails. |
@@ -350,9 +362,7 @@ else :
 | KeyError            | Raised when the specified key is not found in the dictionary. |
 | NameError           | Raised when an identifier is not found in the local or global namespace. |
 | UnboundLocalError   | Raised when trying to access a local variable in a function or method but no value has been assigned to it. |
-| EnvironmentError    | Base class for all exceptions that occur outside the Python environment. |
-| IOError             | Raised when an input / output operation fails, such as the print() statement or the open() function when trying to open a file that does not  |exist.
-| IOError             | Raised for operating system-related errors. |
+| OSError             | Raised for operating system-related errors. |
 | SyntaxError         | Raised when there is an error in Python syntax. |
 | IndentationError    | Raised when indentation is not specified properly. |
 | SystemError         | Raised when the interpreter finds an internal problem, but when this error is encountered the Python interpreter does not exit. |
@@ -361,6 +371,113 @@ else :
 | ValueError          | Raised when the built-in function for a data type has the valid type of arguments, but the arguments have invalid values specified. |
 | RuntimeError        | Raised when a generated error does not fall into any category. |
 | NotImplementedError | Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented. |
+| ImportWarning       | Raised for warning about probable mistakes in module imports. |
+| BytesWarning        | Raised for warnings related to bytes and bytearray. |
+
+### Python Exception Hierarcy
+
+Some exceptions are related and are grouped into categories.  For example `LookupError` includes two sub-errors
+`IndexError` and `KeyError`.  Your code could generically handle both errors the same way, or it could handle each error differently.
+
+Example to generically handle `LookupError`:
+```
+try:
+   ... do something that triggers exception
+except LookupError:
+   ... handle_it()
+```
+
+Example to specifically handle the two sub-types of Python's built-in `LookupError`:
+```
+try:
+   ... do something that triggers exception
+except IndexError:
+   ... handle_index_error()
+except KeyError:
+   ... handle_key_error()   
+```
+Example
+```
+try:
+   ... do something that triggers exception
+except IndexError:
+   ... handle_index_error()
+except KeyError:
+   ... handle_key_error()
+```
+
+
+The class hierarchy for built-in exceptions is [^3]
+
+```
+BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- Exception
+      +-- StopIteration
+      +-- StopAsyncIteration
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+      |    +-- IndexError
+      |    +-- KeyError
+      +-- MemoryError
+      +-- NameError
+      |    +-- UnboundLocalError
+      +-- OSError
+      |    +-- BlockingIOError
+      |    +-- ChildProcessError
+      |    +-- ConnectionError
+      |    |    +-- BrokenPipeError
+      |    |    +-- ConnectionAbortedError
+      |    |    +-- ConnectionRefusedError
+      |    |    +-- ConnectionResetError
+      |    +-- FileExistsError
+      |    +-- FileNotFoundError
+      |    +-- InterruptedError
+      |    +-- IsADirectoryError
+      |    +-- NotADirectoryError
+      |    +-- PermissionError
+      |    +-- ProcessLookupError
+      |    +-- TimeoutError
+      +-- ReferenceError
+      +-- RuntimeError
+      |    +-- NotImplementedError
+      |    +-- RecursionError
+      +-- SyntaxError
+      |    +-- IndentationError
+      |         +-- TabError
+      +-- SystemError
+      +-- TypeError
+      +-- ValueError
+      |    +-- UnicodeError
+      |         +-- UnicodeDecodeError
+      |         +-- UnicodeEncodeError
+      |         +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+           +-- ImportWarning
+           +-- UnicodeWarning
+           +-- BytesWarning
+           +-- ResourceWarning
+```           
+
+
+[^3]: [Official Python Docs - Exception hierarchy](https://docs.python.org/3.9/library/exceptions.html#exception-hierarchy)
 
 ### Example error handling while reading `quotes.dat`
 ```
@@ -373,20 +490,23 @@ longfellow#Whom the Gods would destroy they first make mad!
 ```
 Example:
 ```
-fileName = "quotes.dat"
+file_name = "quotes.dat"
 quotes = { }
 try:
-   fh = open(fileName, "r", encoding="utf-8")
+   fh = open(file_name, "r", encoding="utf-8")
    for line in fh.readlines() :
       (author, quote) = line.split('#')
       quotes[author] = quote
    print(quotes)
-except IOError:
-   print("Error: Cannot open file", fileName, "for reading...")
+except OSError:
+   print("Error: Cannot open file", file_name, "for reading...")
 else:
-   print("Successfully read from", fileName, "file...")
+   print("Successfully read from", file_name, "file...")
    fh.close()
 ```
+
+The `OSError` above will catch all errors related to 
+
 
 ## Class Exercises A
 Write a python program that finds the longest word in a file

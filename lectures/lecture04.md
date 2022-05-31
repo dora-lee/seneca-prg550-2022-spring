@@ -582,3 +582,7 @@ def copy_file(from, to)
 ```
 
 You must use exception handling to check all file I/O operations.
+
+## Class Exercises D
+
+Explain what is exception hierarchy and write code that will trigger each of the built-in [Python Exceptions](https://docs.python.org/3.9/library/exceptions.html#exception-hierarchy)

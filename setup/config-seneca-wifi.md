@@ -1,5 +1,8 @@
 # Connecting the Raspberry Pi to Seneca's Wifi Network
 
+The steps below will configure the Raspberry Pi for use with Seneca's wifi network `SenecaNET`
+Code and steps adapted from M. Heidenreich's [*WPA-EAP Config Generator*](https://matrix.senecacollege.ca/~lnx255/eap.config)
+
 1. Open a terminal to your Raspberry Pi
 1. Change directory to the PRG550 course repository [^1]
     ```

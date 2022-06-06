@@ -54,6 +54,10 @@ All variable names in Python must adhere to the following rules:
     when coding and declaring variable names
    (i.e. `total_price`, `speed_of_light`, `dna_sequence_main`, `image_rotation`, etc.)
 
+   In the majority of cases, use `snake_case` rather than `camelCase` naming convention
+
+   See [here for naming styles](https://realpython.com/python-pep8/#naming-styles) and [here for guidelines in choosing variable names](https://realpython.com/python-pep8/#naming-styles)
+
  2. In Python, code blocks are defined by their [indentation](https://peps.python.org/pep-0008/#indentation).
     A "code block" encompasses functions, if statements, for loops,
     while loops, etc. Indenting starts a block and unindenting ends it.

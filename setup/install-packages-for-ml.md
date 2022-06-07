@@ -1,7 +1,16 @@
 
+# Data Science and ML tools for the Raspberry Pi
 
-## Rebuild Python with ssl to resolve `"ssl module in Python is not available" when installing package with pip3` error. [^1]
+This page will guide you through steps needed to 
 
+1. run a Jupyter notebook server and 
+1. use your PC's web browser to interactively code using notebooks.   
+
+<img src="images/architecture_pi_connectivity_jupyter.png" alt="Basic Raspbery Pi Connectivity" width="500" />
+
+## Rebuild Python with ssl to resolve error `"ssl module in Python is not available" when installing package with pip3` [^1]
+
+Run the below from the Rasberry Pi's command line:
 ```
 sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libatlas-base-dev
 ```
@@ -11,13 +20,13 @@ sh configure --prefix=/home/pi/software
 make && make install
 ```
 
-## Install packages for machine learning environment [^2]
+## Install packages for machine learning environment [^2][^3]
 
 1. Install python packages
     ```
     sudo apt-get install python3-matplotlib
     sudo apt-get install python3-scipy
-    sudo apt-get install python3-numpy    
+    sudo apt-get install python3-numpy
     pip3 install pandas pandas-datareader scikit-learn seaborn yfinance yahoofinancials
     pip3 install bs4 requests
     ```
@@ -64,7 +73,13 @@ make && make install
     Note: the `ssh -L ... ` port forwarding session above must be active in order to connect the the Raspberry Pi's Jupyter server
 
 
+1. Validate your setup by recreating notebook results below
+
+    <img src="images/jupyter-notebook.png" alt="Basic Raspbery Pi Connectivity" width="500" />
+
 
 [^1]: adapted from [Stack Overflow](https://stackoverflow.com/a/44758621)
 
 [^2]: adpapted from [Setup machine learning environment in Raspberry Pi by tisutisu](https://medium.com/@tisutisu/setup-machine-learning-environment-in-raspberry-pi-bc386c6a6f40)
+
+[^3]: to resolve `[libf77blas.so.3: cannot open shared object file: No such file or directory](https://numpy.org/devdocs/user/troubleshooting-importerror.html#raspberry-pi)` issue 

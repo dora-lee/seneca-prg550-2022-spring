@@ -2,6 +2,8 @@
 
 The steps below will configure the Raspberry Pi for use with Seneca's wifi network `SenecaNET`.  Code and steps adapted from M. Heidenreich[^0]
 
+<img src="images/architecture_pi_connectivity_seneca_wifi.png" alt="Basic Raspbery Pi Connectivity" width="500" />
+
 1. Open a terminal to your Raspberry Pi
 1. Change directory to the PRG550 course repository [^1]
     ```

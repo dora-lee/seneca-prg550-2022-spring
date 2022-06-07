@@ -1,5 +1,8 @@
 # Remote editing on Raspberry Pi with VSCode
 
+This page will guide you through steps to create a remote editing enviromnent to allow you to create and edit code directly on the Raspberry Pi.
+
+<img src="images/architecture_pi_connectivity_vscode.png" alt="Basic Raspbery Pi Connectivity" width="500" />
 
 1. Install VSCode [download here](https://code.visualstudio.com/download)
 1. Go to VSCode extension manager <img src="images/vscode-extension-icon.png" width="50">

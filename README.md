@@ -2,8 +2,9 @@
 
 # SEMET PRG550 - Programming Python with the Raspberry Pi - Summer 2022
 
-This is the course home page for **Programming Python with the Raspberry Pi** with the
+This is the course home page for **Programming Python with the Raspberry Pi** [^1] with the
 **_School of Electronics and Mechanical Engineering Technology_** at [Seneca College](www.senecacollege.ca)
+
 
 ## Table of Contents
 
@@ -34,3 +35,6 @@ This is the course home page for **Programming Python with the Raspberry Pi** wi
     - [Cheat Sheet](references/pythonRefSheet.pdf), [Keyword Reference](references/python_keywords.md)
     - [Tutorial](https://www.w3schools.com/python/default.asp)
     - [Tricks and Tips](references/Tips_and_Tricks.md)
+
+
+[^1] A large part of this material is based on the work of [Danny Abesdris(]danny.abesdris@senecacollege.ca).  Thank You Danny :)

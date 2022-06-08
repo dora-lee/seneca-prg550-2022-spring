@@ -13,7 +13,7 @@ hash=$(echo -n $password | iconv -t utf16le | openssl md4 | cut -d" " -f2)
 
 cat << NETWORK 
 network={ 
-	ssid=$ssid 
+	ssid="$ssid"
 	key_mgmt=WPA-EAP 
 	pairwise=CCMP 
 	auth_alg=OPEN 

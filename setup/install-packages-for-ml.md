@@ -15,7 +15,7 @@ Run the below from the Rasberry Pi's command line:
 sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libatlas-base-dev
 ```
 ```
-cd ~/software/src/Python3.9.9
+cd ~/software/src/Python-3.9.9
 sh configure --prefix=/home/pi/software
 make && make install
 ```
@@ -40,7 +40,7 @@ make && make install
 
 1. Setup ssh port forwarding from Raspberry Pi to PC.
     ```
-    ssh -L 8888:localhost:8888 pi@rpi-doralee.local
+    ssh -L 8888:localhost:8888 pi@rpi-YourStudentID.local
     ```
 
 1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory

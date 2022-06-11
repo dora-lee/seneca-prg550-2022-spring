@@ -8,12 +8,14 @@
 
 1. This step will setup basic connectivity via an ethernet cable between your computer and the Raspberry Pi and allow you to establish an ssh session.
 
-    [Setup Raspberry Pi OS](config-image-raspberry-pi-os.md)
-
     <img src="images/architecture_pi_connectivity_basic.png" alt="Basic Raspbery Pi Connectivity" width="500" />
 
+    [Setup Raspberry Pi OS](config-image-raspberry-pi-os.md)
+
+
+
     
-1. [Build and Install Python3 on the Raspberry Pi](install-python3-from-src.md)
+1. This step will [build and Install Python3 on the Raspberry Pi](install-python3-from-src.md)
 
 
 # Working with the Raspberry Pi

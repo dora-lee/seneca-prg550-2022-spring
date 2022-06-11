@@ -28,6 +28,7 @@ Monday June 6, 2022
    - [Class to represent a point on a 2D Plane](#Class-to-represent-a-point-on-a-2D-Plane)
 - [Class Exercise A](#Class-Exercise-A)
 - [Class Exercise B](#Class-Exercise-B)
+- [Class Exercise C](#Class-Exercise-C)
 
 ----------------------------------
 
@@ -306,9 +307,16 @@ print("New point4 is:", point4)
 Examine class structure for [Yahoo! Finance's API](https://github.com/ranaroussi/yfinance) and provide a list of methods the `Ticker` class implements
 
 
-
 ## Class Exercise B
 
 Write code to use the `yfinance` library to collect closing price on 31-May-2022 for the following tickers:
 - `IBM` (International Business Machines, NYSE)
 - `RY` (Royal Bank of Canada, TO)
+
+## Class Exercise C
+
+Create a Jupyter notebook to 
+- load daily data for stock ticker 'AAPL' between 01-Jan-2021 and 31-Dec-2021
+- plot daily close price
+- plot daily volume
+- calculate the monthly average price

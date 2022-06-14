@@ -43,9 +43,9 @@ make && make install
     ssh -L 8888:localhost:8888 pi@rpi-YourStudentID.local
     ```
 
-1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory
+1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory.  `workspace` will be the root folder for the server instance.  (Create the `workspace` directory if you haven't)
     ```
-    cd workspace # you should have already created this directory in /home/pi
+    cd ~/workspace 
     jupyter notebook --no-browser
     ```
 
@@ -72,6 +72,13 @@ make && make install
     ```
     Note: the `ssh -L ... ` port forwarding session above must be active in order to connect the the Raspberry Pi's Jupyter server
 
+1. Navigate to `labs` directory and create new notebook.  The default name is `Untitled.ipynb`, change its nameand verify at command line that you can see the file.
+
+    <img src="images/jupyter-create-new-notebook.png" alt="Basic Raspbery Pi Connectivity" width="150" />
+
+1. Your browser tab should look something like this:
+
+    <img src="images/jupyter-file-browser.png" alt="Basic Raspbery Pi Connectivity" width="300" />
 
 1. Validate your setup by recreating notebook results below
 

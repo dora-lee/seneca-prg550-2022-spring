@@ -17,7 +17,8 @@ Monday June 13, 2022
 ## Page Contents
 
 - [Jupyter Notebooks](#Jupyter-Notebooks)
-    - [Overview of features for Jupyter Classic Notebook interface](#Overview-of-features-for-Jupyter-Classic-Notebook-interface)
+    - [Accessing Lecture Notebooks](#Accessing-Lecture-Notebooks)
+    - [Overview of features for Jupyter Classic Notebook Interface](#Overview-of-features-for-Jupyter-Classic-Notebook-Interface)
 - [Overview of Pandas](#Overview-of-Pandas)
     - [Additional Pandas References](#Additional-Pandas-References)
 - [Regular Expressions in Python](#Regular-Expressions-in-Python)
@@ -32,6 +33,7 @@ Monday June 13, 2022
 - [Class Exercise F](#Class-Exercise-F)
 - [Class Exercise G](#Class-Exercise-G)
 - [Class Exercise H](#Class-Exercise-H)
+- [Class Exercise H](#Class-Exercise-I)
 
 
 
@@ -39,8 +41,32 @@ Monday June 13, 2022
 
 ## Jupyter Notebooks
 
-### Overview of features for Jupyter Classic Notebook interface
-1. [Overview of features for Jupyter Classic Notebook interface](https://docs.jupyter.org/en/latest/start/index.html#try-the-classic-notebook-interface)
+### Accessing Lecture Notebooks
+
+Each week's Jupyter notebook course notes are located in course repository `seneca-prg550-2022-spring/lectures/*.ipynb`.  To update your local repo, use the steps below.
+
+1. Make sure your Pi has internet access to update repo using `git pull`:
+      ```
+      cd /home/pi/seneca-prg550-2022-spring
+      git pull
+      ```
+2. Copy the lecture notebook from the repo (`seneca-prg550-2022-spring/lectures/Lecture06-Jupyter-Notes.ipynb`) to your working directory (`/home/pi/workspace/lectures`)
+      ```
+      cd /home/pi/workspace/lectures # make the necessary directories if they do not exist
+      cp ~/seneca-prg550-2022-spring/lectures/Lecture06-Jupyter-Notes.ipynb .
+      ```
+3. Start Jupyter notebook server from your workspace directory (beginning with step #2 [here](seneca-prg550-2022-spring/lectures))
+
+4. Use the file browser tab and navigate to the `lectures` directory and open `Lecture06-Jupyter-Notes.ipynb`
+
+
+### Overview of features for Jupyter Classic Notebook Interface
+
+1. Briefly read through this introduction [Overview of features for Jupyter Classic Notebook interface](https://docs.jupyter.org/en/latest/start/index.html#try-the-classic-notebook-interface)
+
+2. You can navigate and view the [Lecture 6 notebook notes](Lecture06-Jupyter-Notes.ipynb) within github but you cannot run it
+
+
 
 ### Overview of Pandas
 1. [Overview of Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)
@@ -50,8 +76,9 @@ Monday June 13, 2022
     - [Calculate summary statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html)
     - [Manipulating Text Data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/10_text_data.html)
 ### Additional Pandas References
-    - [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
-    - [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html)
+
+- [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
+- [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html)
 
 ## Regular Expressions in Python
 [Regular expressions](https://docs.python.org/3/howto/regex.html) are search patterns. They are written using a
@@ -68,19 +95,32 @@ engine will match the LEFTMOST and LONGEST possible match.
 
 Regular expressions are created from some combinations of these components:
 
-- Characters A-Z a-z
-- Wildcards * . + ?
-- Repetition ("quantifiers") {n}
-- Anchors ("assertions") ^ &
-- Alternation |
-- Grouping ()
+- Characters `A-Z a-z`
+- Wildcards `* . + ?`
+- Repetition ("quantifiers") `{n}`
+- Anchors ("assertions") `^ &`
+- Alternation `|`
+- Grouping `()`
 
 In Python, the module `re` provides full support for Perl-like regular
 expressions. The `re` module raises the exception `re.error` if an error
 occurs while compiling or using a regular expression.
 
+## Why Regular Expressions?
+
+Regular expressions are a way programmatically describe the `string-pattern` you want to look for in a body of `text`.
+For example:
+
+- What if you want to search for a IP addresses having a specific subnet?
+- What if you have a list of 1000 emails and you only want to find users who signed up with `yahoo` in North America  (ie keep `yahoo.ca` and `yahoo.com` but exclude `yahoo.co.uk`)?
+
+
+
+
+
+
 ## Regular Expression Patterns
-Except for these meta characters: `(+ ? . * ^ $ () [ ] { } | \)`
+Except for these meta characters: `+ ? . * ^ $ ( ) [ ] { } | \`
 all characters match themselves. It is possible to escape a meta
 character by preceding it with a backslash.
 
@@ -106,7 +146,7 @@ in Python:
 |`{n}`|       Matches exactly n number of occurrences of preceding expression.|
 |`{n,}`|      Matches n or more occurrences of preceding expression.|
 |`{n, m}`|    Matches at least n and at most m occurrences of preceding expression.|
-|`a | b`|     Matches either a or b.|
+|`a \| b`|     Matches either `a` or `b`.|
 |`()`|       Groups regular expressions and organizes matched portions into groups.|
 |`\w`|        Matches word characters.|
 |`\W`|        Matches non-word characters.|
@@ -203,16 +243,19 @@ r'a.*z'       # matches anything starting with a and ending with z
 r'[a-z]{5,}'' # matches 5 or more lowercase letters
 ```
 
-## The Python match/search Function
+## Regex `search`-ing and `match`-ing strings
 
-The search function searches for the first occurrence of a regular
+The `search` function searches for the **first** occurrence of a regular
 expression pattern ANYWHERE within the search text and may include
-optional flags. The match function on the other hand ONLY matches
-search text at the beginning of entry and NOT at other points within
+optional flags. The `match` function on the other hand ONLY matches
+search text at the beginning of the text and NOT at other points within
 the text.
+
 Syntax:
 ```
 re.search(pattern, string, flags=0)
+
+re.match(pattern, string, flags=0)
 ```
 where
 |       |            |
@@ -257,7 +300,7 @@ for pattern in regxList :
 ```
 
 
-## Searching and replacing text with Python
+## Regex searching and replacing text with `sub`
 One of the most important re methods that use regular expressions is sub.
 Syntax:
 ```
@@ -282,6 +325,16 @@ expressions on a basic string data.
 
 ## Class Exercise A
 
+Work through all of [Pandas Getting Started Tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html):
+- [Reading and Writing Data in Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html)
+- [Select subset of data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html)
+- [Create new columns of data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/05_add_columns.html)
+- [Calculate summary statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html)
+- [Manipulating Text Data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/10_text_data.html)
+
+
+## Class Exercise B
+
 1. Read `aapl_stock.json` into a Pandas dataframe
 1. Convert the `date` field from `string` to `datetime` object
 1. Create a `month` column derived from `date` field
@@ -289,8 +342,7 @@ expressions on a basic string data.
 1. Create a `day-of-week` column derived from `date` field
 1. Calculate the average volume for each day of the week
 
-
-## Class Exercise B
+## Class Exercise C
 Write the Python regular expressions (regexp) which will do the following:
 If any of the conditions are encountered, print the message `Exception Found...` to the screen.
 
@@ -306,7 +358,7 @@ If any of the conditions are encountered, print the message `Exception Found...`
     e)    Makes sure that a field contains at least 1 NON-whitespace
           character.
 
-## Class Exercise C
+## Class Exercise D
 Explain each of the following regular expressions:
 
     a)    r'(\w+)$'
@@ -315,29 +367,29 @@ Explain each of the following regular expressions:
     d)    r'^[0-9]+$'
     e)    r'((^[0-9]+\.?)$)|((\.[0-9][0-9]*)$)'
 
-## Class Exercise D
+## Class Exercise E
 
 Replace every occurrence of the character `s` (upper or lowercase),
       in the string `She sells sea shells by the sea shore.`, with
       the character `T`.
 
-## Class Exercise E
+## Class Exercise F
 Write a complete Python program which opens a plain text file
       and replaces every occurence of the word `he` with the
       word `she`.
 
-## Class Exercise F
+## Class Exercise G
 Write the regular expression that validates a Canadian POSTAL CODE
       in the form `LetterNumberLetter (embedded space or - permitted) NumberLetterNumber`
 
-## Class Exercise G
+## Class Exercise H
 Write the regular expression that validates a North American telephone number in the form
 
         xxx (optional space or `-`) yyy (optional space or `-` ) zzzz
     
     Such that `x`, `y`, `z` are digit characters ONLY.
 
-## Class Exercise G
+## Class Exercise I
 
 Write the regular expression that validates an email address in the form `username@host.domain`
 such that:

@@ -38,9 +38,13 @@ make && make install
     pip3 install jupyter
     ```
 
-1. Setup ssh port forwarding from Raspberry Pi to PC.
+1. Setup ssh port forwarding from your PC to the Raspberry Pi[^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
     ```
-    ssh -L 8888:localhost:8888 pi@rpi-YourStudentID.local
+    ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@rpi-YourStudentID.local
+
+    ssh -L 8888:localhost:8888 pi@rpi-YourStudentID.local  # normal jupyter startup 
+
+    ssh -L 8888:localhost:8889 pi@rpi-YourStudentID.local  # if jupyter starts with port 8889
     ```
 
 1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory.  `workspace` will be the root folder for the server instance.  (Create the `workspace` directory if you haven't)
@@ -49,7 +53,7 @@ make && make install
     jupyter notebook --no-browser
     ```
 
-1. Once the Jupyter server starts, you'll see messages similar to below
+1. Once the Jupyter server starts, you'll see messages similar to below.   By default, the server starts on the Pi listening to port `8888`.  If you see a port number that is different, you'll need to open another ssh session with forwarding to the matching port (see `ssh -L` example #3 above)
     ```
     [I 12:18:36.226 NotebookApp] Serving notebooks from local directory: /home/pi/workspace
     [I 12:18:36.226 NotebookApp] Jupyter Notebook 6.4.11 is running at:
@@ -72,13 +76,16 @@ make && make install
     ```
     Note: the `ssh -L ... ` port forwarding session above must be active in order to connect the the Raspberry Pi's Jupyter server
 
-1. Navigate to `labs` directory and create new notebook.  The default name is `Untitled.ipynb`, change its nameand verify at command line that you can see the file.
-
-    <img src="images/jupyter-create-new-notebook.png" alt="Basic Raspbery Pi Connectivity" width="150" />
-
-1. Your browser tab should look something like this:
+    Your browser tab should look something like this:
 
     <img src="images/jupyter-file-browser.png" alt="Basic Raspbery Pi Connectivity" width="300" />
+
+1. Navigate to `labs` directory and create new notebook.  "New"-->"Python 3 (ipykernel)".  
+
+    The default name is `Untitled.ipynb`, change its name and verify at command line that you can see the file.
+
+    <img src="images/jupyter-create-new-notebook.png" alt="Basic Raspbery Pi Connectivity" width="300" />
+
 
 1. Validate your setup by recreating notebook results below
 
@@ -90,3 +97,5 @@ make && make install
 [^2]: adpapted from [Setup machine learning environment in Raspberry Pi by tisutisu](https://medium.com/@tisutisu/setup-machine-learning-environment-in-raspberry-pi-bc386c6a6f40)
 
 [^3]: to resolve `[libf77blas.so.3: cannot open shared object file: No such file or directory](https://numpy.org/devdocs/user/troubleshooting-importerror.html#raspberry-pi)` issue 
+
+[^4] Read more about port forwarding [here](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding)

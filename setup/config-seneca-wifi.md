@@ -20,7 +20,7 @@ The steps below will configure the Raspberry Pi for use with Seneca's wifi netwo
     ```
 1. To allow the Raspberry Pi to connect to both your home wifi and Seneca's wifi, append the Seneca wpa configuration generated above (`wpa_supplicant_seneca.conf`) to the existing system file `/etc/wpa/wpa_supplicant.conf` 
     ```
-    sudo cat wpa_supplicant_seneca.conf >> /etc/wpa_supplicant/wpa_supplicant.conf 
+    sudo bash -c "cat wpa_supplicant_seneca.conf >> /etc/wpa_supplicant/wpa_supplicant.conf"
     ```
 1. Running `less /etc/wpa/wpa_supplicant.conf` will show that your file should look something like this
     
@@ -39,7 +39,7 @@ The steps below will configure the Raspberry Pi for use with Seneca's wifi netwo
     }
     ```
     
-1. Reinitialize the Pi's wifi interface:
+1. Reinitialize the Pi's wifi interface [^2]:
     ```
     wpa_cli -i wlan0 reconfigure
     ```
@@ -63,3 +63,5 @@ The steps below will configure the Raspberry Pi for use with Seneca's wifi netwo
 [^0]:  [*WPA-EAP Config Generator*](https://matrix.senecacollege.ca/~lnx255/eap.config)
 
 [^1]: if `/home/pi/seneca-prg550-2022-spring` directory doesn't exist, follow steps [here.](https://github.com/dora-lee/seneca-prg550-2022-spring/blob/main/setup/config-image-raspberry-pi-os.md)
+
+[^2]: [wpa_supplicant](https://wiki.archlinux.org/title/wpa_supplicant#Connecting_with_wpa_cli)

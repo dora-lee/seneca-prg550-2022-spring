@@ -33,7 +33,7 @@ Monday June 13, 2022
 - [Class Exercise F](#Class-Exercise-F)
 - [Class Exercise G](#Class-Exercise-G)
 - [Class Exercise H](#Class-Exercise-H)
-- [Class Exercise H](#Class-Exercise-I)
+- [Class Exercise I](#Class-Exercise-I)
 
 
 
@@ -55,7 +55,8 @@ Each week's Jupyter notebook course notes are located in course repository `sene
       cd /home/pi/workspace/lectures # make the necessary directories if they do not exist
       cp ~/seneca-prg550-2022-spring/lectures/Lecture06-Jupyter-Notes.ipynb .
       ```
-3. Start Jupyter notebook server from your workspace directory (beginning with step #2 [here](seneca-prg550-2022-spring/lectures))
+3. Start Jupyter notebook server from your workspace directory (beginning with step #2 [here](../setup/install-packages-for-ml.md#install-and-connect-to-jupyter-server-on-the-rasberry-pi-2))
+
 
 4. Use the file browser tab and navigate to the `lectures` directory and open `Lecture06-Jupyter-Notes.ipynb`
 
@@ -79,6 +80,21 @@ Each week's Jupyter notebook course notes are located in course repository `sene
 
 - [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
 - [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html)
+
+
+## Why Regular Expressions?
+
+Regular expressions are a way programmatically describe the `string-pattern` you want to look for in a body of `text`.
+For example:
+
+- What if you want to search for a IP addresses having a specific subnet?
+- What if you have a list of 1000 emails and you only want to find users who signed up with `yahoo` in North America  (ie keep `yahoo.ca` and `yahoo.com` but exclude `yahoo.co.uk`)?
+- What if you need you have a list of emails like `test@domain.com` that you need to change to `test@my-domain.com` ?
+
+How would you describe the string you want to find or the operation you want to make?  
+
+Regular expressions (or "regex") are a way to parse and operate on strings in a compact manner.
+
 
 ## Regular Expressions in Python
 [Regular expressions](https://docs.python.org/3/howto/regex.html) are search patterns. They are written using a
@@ -105,19 +121,6 @@ Regular expressions are created from some combinations of these components:
 In Python, the module `re` provides full support for Perl-like regular
 expressions. The `re` module raises the exception `re.error` if an error
 occurs while compiling or using a regular expression.
-
-## Why Regular Expressions?
-
-Regular expressions are a way programmatically describe the `string-pattern` you want to look for in a body of `text`.
-For example:
-
-- What if you want to search for a IP addresses having a specific subnet?
-- What if you have a list of 1000 emails and you only want to find users who signed up with `yahoo` in North America  (ie keep `yahoo.ca` and `yahoo.com` but exclude `yahoo.co.uk`)?
-
-
-
-
-
 
 ## Regular Expression Patterns
 Except for these meta characters: `+ ? . * ^ $ ( ) [ ] { } | \`
@@ -146,7 +149,7 @@ in Python:
 |`{n}`|       Matches exactly n number of occurrences of preceding expression.|
 |`{n,}`|      Matches n or more occurrences of preceding expression.|
 |`{n, m}`|    Matches at least n and at most m occurrences of preceding expression.|
-|`a \| b`|     Matches either `a` or `b`.|
+|`\|`|     Matches either `a` or `b`.|
 |`()`|       Groups regular expressions and organizes matched portions into groups.|
 |`\w`|        Matches word characters.|
 |`\W`|        Matches non-word characters.|
@@ -161,8 +164,8 @@ in Python:
 
 Examples:
 ```
-	  [abc]       - Matches either a, b, or c.
-	  [a-zA-Z0-9] - Matches any char from (a to z) or (A to Z) or (0 to 9).
+r'1[abc]2'           - Matches between the `1` and `2`, either `a`, `b`, or `c` (ex: `1a2`, `1b2`, or `1c2`)
+r'1[a-zA-Z0-9]2'     - Matches between `1` and `2`, any single char from (a to z) or (A to Z) or (0 to 9).
 ```
 
 Anchors and assertions do not match specific characters, but
@@ -192,11 +195,11 @@ NOT listed.
 
 Example:
 ```
-r'[12345]` # matches 1, 2, 3, 4, or 5
-r'[1-5]` # matches 1,2,3, 4, or 5
-r'[1-590]` # matches 1, 2, 3, 4, 5, 9, or 0
-r'[^0-9]` # matches any character which is not a digit
-r'[^:]` # matches any character which is not a colon
+r'[12345]' # matches 1, 2, 3, 4, or 5
+r'[1-5]' # matches 1,2,3, 4, or 5
+r'[1-590]' # matches 1, 2, 3, 4, 5, 9, or 0
+r'[^0-9]' # matches any character which is not a digit
+r'[^:]' # matches any character which is not a colon
 ```
 Alternation lets you write alternative text; either the text
 before or after the alternation character `|` may be matched.
@@ -232,15 +235,15 @@ characters as possible (because of the "leftmost and longest" rule).
 You can reverse that to make a quantifier match as few characters
 as possible by adding a question mark at the end:
 ```
-`{0,5}?` # matches 0 to 5 of the preceeding atom, but ONLY as few as possible.
+{0,5}? # matches 0 to 5 of the preceeding atom, but ONLY as few as possible.
 ```
 
 Examples:
 ```
-r'a{5}''      # matches "aaaaa"
-r'a{2,5}''    # matches "aa", "aaa", "aaaa", or "aaaaa"
-r'a.*z'       # matches anything starting with a and ending with z
-r'[a-z]{5,}'' # matches 5 or more lowercase letters
+r'a{5}'      # matches "aaaaa"
+r'a{2,5}'    # matches "aa", "aaa", "aaaa", or "aaaaa"
+r'a.*z'      # matches anything starting with a and ending with z
+r'[a-z]{5,}' # matches 5 or more lowercase letters
 ```
 
 ## Regex `search`-ing and `match`-ing strings
@@ -316,11 +319,13 @@ import re
 result = re.sub(r'\sAND\s', ' $amp; ', 'Green Eggs AND Ham And Sam I Am!', flags=re.I)
 print(result)
 ```
-A helpful website to help you test and understand regular expressions is:
-<a href="https://regex101.com" target="_blank">https://regex101.com/</a>
 
-For the questions below, assume that you will be testing regular
-expressions on a basic string data.
+Regex resources
+|                         |                         |
+|:------------------------|:------------------------|
+| [Awesome Regex](https://github.com/aloisdg/awesome-regex#awesome-regex) | A curated collection of awesome Regex libraries, tools, frameworks and software |
+| [regex101.com](https://regex101.com) | A helpful website to help you test and understand regular expressions|
+| [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html) |Python Docs Regular Expression HOWTO |
 
 
 ## Class Exercise A

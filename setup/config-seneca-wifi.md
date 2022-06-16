@@ -62,6 +62,6 @@ The steps below will configure the Raspberry Pi for use with Seneca's wifi netwo
 
 [^0]:  [*WPA-EAP Config Generator*](https://matrix.senecacollege.ca/~lnx255/eap.config)
 
-[^1]: if `/home/pi/seneca-prg550-2022-spring` directory doesn't exist, follow steps [here.](https://github.com/dora-lee/seneca-prg550-2022-spring/blob/main/setup/config-image-raspberry-pi-os.md)
+[^1]: if `/home/pi/seneca-prg550-2022-spring` directory doesn't exist, follow steps [here.](../references/Tips_and_Tricks.md#clone-course-repository-to-raspberry-pi)
 
 [^2]: [wpa_supplicant](https://wiki.archlinux.org/title/wpa_supplicant#Connecting_with_wpa_cli)

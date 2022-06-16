@@ -74,7 +74,7 @@ make && make install
     ```
     http://localhost:8888/?token=9b571a812c2bbca3d7f3a8d46d2a0b3085d4379cc12031db
     ```
-    Note: the `ssh -L ... ` port forwarding session above must be active in order to connect the the Raspberry Pi's Jupyter server
+    Note: the `ssh -L ... ` port forwarding session above must be active in order to connect to the Raspberry Pi's Jupyter server
 
     Your browser tab should look something like this:
 

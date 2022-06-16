@@ -38,7 +38,7 @@ make && make install
     pip3 install jupyter
     ```
 
-1. Setup ssh port forwarding from your PC to the Raspberry Pi[^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
+1. Setup ssh port forwarding from your PC to the Raspberry Pi [^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
     ```
     ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@<your_pi's_hostname>.local
 
@@ -98,4 +98,4 @@ make && make install
 
 [^3]: to resolve `[libf77blas.so.3: cannot open shared object file: No such file or directory](https://numpy.org/devdocs/user/troubleshooting-importerror.html#raspberry-pi)` issue 
 
-[^4] Read more about port forwarding [here](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding)
+[^4]: Read more about port forwarding [here](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding)

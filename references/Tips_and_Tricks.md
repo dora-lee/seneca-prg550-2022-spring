@@ -13,3 +13,19 @@
 import os
 os.system('clear')
 ```
+
+
+### Clone course repository to Raspberry Pi
+```
+git clone https://github.com/dora-lee/seneca-prg550-2022-spring.git
+```
+
+### Updating local course repository from GitHub
+
+```
+cd /home/pi/seneca-prg550-2022-spring
+git rm --cached -r . # clear git's cache
+git reset --hard HEAD  # reset local HEAD to remote's HEAD
+
+git pull # update local repo from origin
+```

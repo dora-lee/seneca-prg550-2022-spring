@@ -40,11 +40,11 @@ make && make install
 
 1. Setup ssh port forwarding from your PC to the Raspberry Pi[^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
     ```
-    ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@rpi-YourStudentID.local
+    ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@<your_pi's_hostname>.local
 
-    ssh -L 8888:localhost:8888 pi@rpi-YourStudentID.local  # normal jupyter startup 
+    ssh -L 8888:localhost:8888 pi@<your_pi's_hostname>.local  # normal jupyter startup 
 
-    ssh -L 8888:localhost:8889 pi@rpi-YourStudentID.local  # if jupyter starts with port 8889
+    ssh -L 8888:localhost:8889 pi@<your_pi's_hostname>.local  # if jupyter starts with port 8889
     ```
 
 1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory.  `workspace` will be the root folder for the server instance.  (Create the `workspace` directory if you haven't)

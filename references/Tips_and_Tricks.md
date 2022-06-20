@@ -17,6 +17,7 @@ os.system('clear')
 
 ### Clone course repository to Raspberry Pi
 ```
+cd /home/pi
 git clone https://github.com/dora-lee/seneca-prg550-2022-spring.git
 ```
 
@@ -24,8 +25,16 @@ git clone https://github.com/dora-lee/seneca-prg550-2022-spring.git
 
 ```
 cd /home/pi/seneca-prg550-2022-spring
-git rm --cached -r . # clear git's cache
-git reset --hard HEAD  # reset local HEAD to remote's HEAD
-
 git pull # update local repo from origin
 ```
+
+1. If you get merge errors, try one of these commands to reset the state of your local repo
+    ```
+    git stash # stash changes made to repo files
+    git rm --cached -r . # clear git's cache
+    git reset --hard HEAD  # reset local HEAD to remote's HEAD
+    ```
+2. **OR** rename the repo directoy and [`git clone` again above](#clone-course-repository-to-raspberry-pi)
+    ```
+    mv /home/pi/seneca-prg550-2022-spring /home/pi/seneca-prg550-2022-spring_old
+    ```

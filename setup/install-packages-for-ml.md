@@ -38,22 +38,13 @@ make && make install
     pip3 install jupyter
     ```
 
-1. Setup ssh port forwarding from your PC to the Raspberry Pi [^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
-    ```
-    ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@<your_pi's_hostname>.local
-
-    ssh -L 8888:localhost:8888 pi@<your_pi's_hostname>.local  # normal jupyter startup 
-
-    ssh -L 8888:localhost:8889 pi@<your_pi's_hostname>.local  # if jupyter starts with port 8889
-    ```
-
 1. Start Jupyter server on Raspberry Pi in `/home/pi/workspace` directory.  `workspace` will be the root folder for the server instance.  (Create the `workspace` directory if you haven't)
     ```
     cd ~/workspace 
     jupyter notebook --no-browser
     ```
 
-1. Once the Jupyter server starts, you'll see messages similar to below.   By default, the server starts on the Pi listening to port `8888`.  If you see a port number that is different, you'll need to open another ssh session with forwarding to the matching port (see `ssh -L` example #3 above)
+1. Once the Jupyter server starts, you'll see messages similar to below.   By default, the server starts on the Pi listening to port `8888`.  If you see a port number that is different, you'll need to open another ssh session with forwarding to the matching port (see `ssh -L` example #3 below)
     ```
     [I 12:18:36.226 NotebookApp] Serving notebooks from local directory: /home/pi/workspace
     [I 12:18:36.226 NotebookApp] Jupyter Notebook 6.4.11 is running at:
@@ -68,6 +59,17 @@ make && make install
             http://localhost:8888/?token=7fcf706d39383de787d04a234caed47dc2c81e768c4a95d0
         or http://127.0.0.1:8888/?token=7fcf706d39383de787d04a234caed47dc2c81e768c4a95d0
 
+    ```
+
+1. Setup ssh port forwarding from your PC to the Raspberry Pi in order to connect to the Jupyter server you just started[^4].  When Jupyter starts, it normally listens to port `8888` for connections.  If your server starts up and you see a different port number, you'll need to open another ssh session with forwarding to the correct port (see example #3 below)
+    ```
+    ssh -L <port_on_pc>:localhost:<jupyter_port_on_pi> pi@<your_pi's_hostname>.local
+
+    # normal jupyter startup 
+    ssh -L 8888:localhost:8888 pi@<your_pi's_hostname>.local  
+
+    # if jupyter starts with port 8889
+    ssh -L 8888:localhost:8889 pi@<your_pi's_hostname>.local
     ```
 
 1. From your PC's web browser connect to the indicated url.  From the above example, connect with this url:

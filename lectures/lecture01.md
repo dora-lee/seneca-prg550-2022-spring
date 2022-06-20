@@ -229,7 +229,7 @@ For example, the value 10 in binary is `0000 1010` and 4 is `0000 0100`
 |    |                |                  |
 |----|----------------|:------------------|
 | &amp; |  Bitwise AND | `x & y = 0 (0000 0000)` |
-| \| |  Bitwise OR | `x | y = 14 (0000 1110)` |
+| \| |  Bitwise OR | `x \| y = 14 (0000 1110)` |
 | ~  | Bitwise NOT | `~x = -11 (1111 0101)` |
 | ^  | Bitwise XOR | `x ^ y = 14 (0000 1110)` |
 | &gt;&gt; | Bitwise right shift | `x >> 2 = 2 (0000 0010)` |
@@ -266,8 +266,8 @@ same part of the memory. Two variables that are equal does not imply that
 they are identical.
 |    |                |
 |----|----------------|
-| is     | True if the operands are identical (refer to same object) |
-| is not | True if the operands are not identical (do not refer to same object) |
+| `is`     | `True` if the operands are identical (refer to same object) |
+| `is not` | `True` if the operands are not identical (do not refer to same object) |
 
 ```
 x1 = 5

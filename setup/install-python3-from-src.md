@@ -136,7 +136,7 @@ make install
 ```
 
 
-<span class="c9d">STEP 13:</span> Now move back to your home directory by entering the cd command.
+<span class="c9d">STEP 10:</span> Now move back to your home directory by entering the cd command.
 
 ```/home/pi/software/src/Python-3.9.9>```
 ```

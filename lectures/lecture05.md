@@ -229,10 +229,10 @@ class Point:
    '''
 
    def __init__(self, x=0, y=0, copy=None):
-   '''
-      This constructor initializes the position of a new point
-      The x and y coordinates can be specified, but default to 0, 0.
-   '''
+      '''
+         This constructor initializes the position of a new point
+         The x and y coordinates can be specified, but default to 0, 0.
+      '''
       if copy != None:
          self.move(copy.x, copy.y)
       else:

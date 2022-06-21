@@ -68,8 +68,11 @@ make && make install
     # normal jupyter startup 
     ssh -L 8888:localhost:8888 pi@<your_pi's_hostname>.local  
 
-    # if jupyter starts with port 8889, setup port forwarding on port 8889
+    # if jupyter starts with port 8889, setup PC port 8889 forwarding to Pi's port 8889 (use Juypter's URL directly)
     ssh -L 8889:localhost:8889 pi@<your_pi's_hostname>.local
+
+    # if jupyter starts with port 8889, setup PC port 8888 forwarding to Pi's port 8889 (update Jupyter's URL to localhost:8888)
+    ssh -L 8888:localhost:8889 pi@<your_pi's_hostname>.local
     ```
 
 1. From your PC's web browser connect to the indicated url.  From the above example, connect with this url:

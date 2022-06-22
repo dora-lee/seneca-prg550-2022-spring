@@ -71,11 +71,13 @@ Each week's Jupyter notebook course notes are located in course repository `sene
 
 ### Overview of Pandas
 1. [Overview of Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)
+    - [What kind of data does pandas handle](https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html)
     - [Reading and Writing Data in Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html)
     - [Select subset of data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html)
     - [Create new columns of data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/05_add_columns.html)
     - [Calculate summary statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html)
     - [Manipulating Text Data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/10_text_data.html)
+
 ### Additional Pandas References
 
 - [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)

@@ -9,7 +9,7 @@
 Lab #5 will give you practice with Jupyter notebooks and provide you with an understanding of the Pandas library.
 Pandas will be core foundation tool for the rest course.
 
-You will be required update the skeleton `Lab06-Jupyter-and-Pandas.ipynb` notebook and show that 
+You will be required update the skeleton `Lab05-Jupyter-and-Pandas.ipynb` notebook and show that 
 you reproduced results from the below tutorials in the notebook:
 
 - [What kind of data does pandas handle](https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html)
@@ -20,14 +20,23 @@ you reproduced results from the below tutorials in the notebook:
 - [Manipulating Text Data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/10_text_data.html)
 
 
+1. Connect to your Pi using `ssh` from a terminal program on your PC
 1. Update your Raspberry Pi's local course repository ([instructions here](../references/Tips_and_Tricks.md#updating-local-course-repository-from-github))
-1. Copy Lab 5 notebook file to your workspace
+1. Ensure the latest notebook is present
     ```
-    cp /home/pi/seneca-prg550-2022-spring/labs/Lab06-Jupyter-and-Pandas.ipynb /home/pi/workspace/labs/
+    ls -al /home/pi/seneca-prg550-2022-spring/labs/Lab05-Jupyter-and-Pandas.ipynb
     ```
-1. Start Jupyter notebook from the `workspace` directory 
-1. Navigate to the `labs` directory and open the `Lab06-Jupyter-and-Pandas.ipynb` notebook
-1. Follow instructions in the Lab 5 notebook
+1. Copy Lab 5 notebook file to your `workspace` directory in the `labs` sub-directory
+    ```
+    cp /home/pi/seneca-prg550-2022-spring/labs/Lab05-Jupyter-and-Pandas.ipynb /home/pi/workspace/labs/
+    ```
+1. Start Jupyter notebook from the `workspace` directory
+    ```
+    cd /home/pi/workspace
+    jupyter notebook --no-browser
+    ```
+1. In Jupyter, navigate to the `labs` directory and open the `Lab05-Jupyter-and-Pandas.ipynb` notebook
+1. Follow remaining instructions in the Lab 5 notebook
 
 Tip: open the tutorial links from your PC's browser to reduce memory usage by the Pi
 

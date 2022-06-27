@@ -30,9 +30,10 @@ git pull # update local repo from origin
 
 1. If you get merge errors, try one of these commands to reset the state of your local repo
     ```
-    git stash # stash changes made to repo files
+    git stash # stash your changes made to repo files
     git rm --cached -r . # clear git's cache
     git reset --hard HEAD  # reset local HEAD to remote's HEAD
+    git clean -fd # delete recursively files added since last commit
     ```
 2. **OR** rename the repo directoy and [`git clone` again above](#clone-course-repository-to-raspberry-pi)
     ```

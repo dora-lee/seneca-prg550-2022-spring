@@ -21,6 +21,10 @@ you reproduced results from the below tutorials in the notebook:
 
 
 1. Connect to your Pi using `ssh` from a terminal program on your PC
+1. Install additional modules
+    ```
+    pip3 install openpyxl
+    ```
 1. Update your Raspberry Pi's local course repository ([instructions here](../references/Tips_and_Tricks.md#updating-local-course-repository-from-github))
 1. Ensure the latest notebook is present
     ```

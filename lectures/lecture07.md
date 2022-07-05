@@ -18,7 +18,7 @@ Monday July 4, 2022
 - [What is Machine Learning?](#What-is-Machine-Learning?)
 - [Career Roles in Data Science](#Career-Roles-in-Data-Science)
     - [Career Roles and the Data Life Cycle](#Career-Roles-and-the-Data-Life-Cycle)
-    - [Career Profle: Data Scientist at Shopify](Career-Profile-Data-Scientist-at-Shopify)
+    - [Career Profile: Data Scientist at Shopify](Career-Profile-Data-Scientist-at-Shopify)
 - [Data Science and Machine Learning with the Raspberry Pi](#Data-Science-and-Machine-Learning-with-the-Raspberry-Pi)
 - [Data Science and ML Process](#Data-Science-and-ML-Process)
 - [Data Science Process Applied to Our North Star](#Data-Science-Process-Applied-to-Our-North-Star)
@@ -99,7 +99,7 @@ In the reminder of this course, we will use foundational skills from [Lecture 1]
 <img src="images/project_functional_diagram.png" alt="Raspbery Pi Temperature Prediction Functional Diagram" width="600" />
 </p>
 
-## Career Profle: Data Scientist at Shopify
+## Career Profile: Data Scientist at Shopify
 
 - [Kamakshi Bagga](https://docs.google.com/document/d/1jl-R-YK1BnxMLtlHJFu1UDhwCx7puCqnxo_pYHpcq-M/edit)
 

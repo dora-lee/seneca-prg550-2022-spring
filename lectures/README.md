@@ -10,3 +10,4 @@
 |[Lecture 5](lecture05.md)| 06-Jun-2022 |
 |[Lecture 6](lecture05.md)| 13-Jun-2022 |
 |Lab Test Review| 20-Jun-2022 |
+|[Lecture 7](lecture07.md)| 04-Jul-2022 |

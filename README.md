@@ -17,7 +17,7 @@ This is the course home page for **Programming Python with the Raspberry Pi** [^
 | 6 | 13-Jun-2022 | [Lecture 6](../main/lectures/lecture06.md) <br> [Assignment #1 Released](http://www.doralee.ca/courses/prg550/assignments/prg550.222.assignment1.html) |
 | 7 | 20-Jun-2022 | [Lab Test 1 Released](http://www.doralee.ca/courses/prg550/labTests/labTest1/prg550.222.labTest1.html) <br> [Lab 5 Assigned](labs/lab05.md) |
 | 8 | 27-Jun-2022 | **_Study week, no class, no labs_**|
-| 9 | 04-Jul-2022 | Lecture 7 <br> Lab 6 Assigned|
+| 9 | 04-Jul-2022 |  [Lecture 7](../main/lectures/lecture07.md) <br> [Lab 6 Assigned](labs/lab06.md) |
 | 10 | 11-Jul-2022 | Lecture 8 <br> Lab 7 Assigned |
 | 11 | 18-Jul-2022 | Lecture Test |
 | 12 | 25-Jul-2022 | Lecture 9 <br> Assignment #2 Released|
@@ -36,4 +36,4 @@ This is the course home page for **Programming Python with the Raspberry Pi** [^
     - [Tricks and Tips](references/Tips_and_Tricks.md)
 
 
-[^1] A large part of this material is based on the work of [Danny Abesdris(]danny.abesdris@senecacollege.ca).  Thank You Danny :)
+[^1]: A large part of this material is based on the work of [Danny Abesdris](danny.abesdris@senecacollege.ca).  Thank You Danny :)

@@ -90,6 +90,10 @@ Corresponding to these stages, this visualization overlays the data life cycle w
 <img src="images/data_science_roles.png" alt="Career Roles in Data Science" width="600" />
 </p>
 
+## Career Profile: Data Scientist at Shopify
+
+- [Kamakshi Bagga](https://docs.google.com/document/d/1jl-R-YK1BnxMLtlHJFu1UDhwCx7puCqnxo_pYHpcq-M/edit)
+
 ## Data Science and Machine Learning with the Raspberry Pi
 
 In the reminder of this course, we will use foundational skills from [Lecture 1](lecture01.md)
@@ -99,9 +103,6 @@ In the reminder of this course, we will use foundational skills from [Lecture 1]
 <img src="images/project_functional_diagram.png" alt="Raspbery Pi Temperature Prediction Functional Diagram" width="600" />
 </p>
 
-## Career Profile: Data Scientist at Shopify
-
-- [Kamakshi Bagga](https://docs.google.com/document/d/1jl-R-YK1BnxMLtlHJFu1UDhwCx7puCqnxo_pYHpcq-M/edit)
 
 ## Data Science and ML Process
 

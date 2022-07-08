@@ -1,3 +1,4 @@
+<span><img src="../images/senecac.gif" alt="Seneca College" height="38" width="349" /></span>
 
 ### Handy Python References
 | Link          | Description            |

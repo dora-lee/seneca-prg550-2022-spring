@@ -1,3 +1,4 @@
+<span><img src="../images/senecac.gif" alt="Seneca College" height="38" width="349" /></span>
 # Connecting the Raspberry Pi to Seneca's Wifi Network
 
 The steps below will configure the Raspberry Pi for use with Seneca's wifi network `SenecaNET`.  Code and steps adapted from M. Heidenreich[^0]

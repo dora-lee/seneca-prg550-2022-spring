@@ -1,3 +1,4 @@
+<img src="../images/senecac.gif" alt="Seneca College" height="38" width="349" />
 
 # Data Science and ML tools for the Raspberry Pi
 
@@ -27,7 +28,7 @@ make && make install
     sudo apt-get install python3-matplotlib
     sudo apt-get install python3-scipy
     sudo apt-get install python3-numpy
-    pip3 install pandas pandas-datareader scikit-learn seaborn yfinance yahoofinancials
+    pip3 install pandas pandas-datareader scikit-learn seaborn yfinance yahoofinancials openpyxl
     pip3 install bs4 requests
     ```
 

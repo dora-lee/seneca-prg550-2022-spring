@@ -47,3 +47,8 @@
 1. This step will [Setup Tools for Data Science and ML with the Raspberry Pi](install-packages-for-ml.md)
 
     <img src="images/architecture_pi_connectivity_jupyter.png" alt="Basic Raspbery Pi Connectivity" width="500" />
+
+
+# Pre-configured PRG550 image to work with Lab 5
+
+Install preconfigured [20220707 PRG550 image](install-PRG550-ml-pre-config-image.md)

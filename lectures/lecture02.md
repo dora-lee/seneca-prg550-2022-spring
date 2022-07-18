@@ -639,22 +639,19 @@ class_courses_and_grades = {
                     "calculus": 80,
                     "physics": 85
                             }
-            }
-    },
+            },
     "Hamed" : { "courses": {
                     "programming": 72,
                     "calculus": 76,
                     "physics": 65
                             }
-            }
-    },
+            },
     "Maryam" : { "courses": {
                     "programming": 86,
                     "calculus": 55,
                     "physics": 67
                             }
-            }
-    },
+            },
     "William" : { "courses": {
                     "programming": 56,
                     "calculus": 85,
@@ -662,7 +659,6 @@ class_courses_and_grades = {
                             }
             }
     }
-}
 ```
 [^3]: [Generate pseudo-random numbers](https://docs.python.org/3.9/library/random.html)
 

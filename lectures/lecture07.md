@@ -19,12 +19,11 @@ Monday July 4, 2022
 - [Career Roles in Data Science](#Career-Roles-in-Data-Science)
     - [Career Roles and the Data Life Cycle](#Career-Roles-and-the-Data-Life-Cycle)
     - [Career Profile: Data Scientist at Shopify](Career-Profile-Data-Scientist-at-Shopify)
-- [Data Science and Machine Learning with the Raspberry Pi](#Data-Science-and-Machine-Learning-with-the-Raspberry-Pi)
 - [Data Science and ML Process](#Data-Science-and-ML-Process)
-- [Data Science Process Applied to Our North Star](#Data-Science-Process-Applied-to-Our-North-Star)
 - [A Chef's Guide to the Data Science Process](#A-Chef's-Guide-to-the-Data-Science-Process)
-
-
+- [PRG550 Capstone Project](#PRG550-Capstone-Project)
+    - [Data Science and Machine Learning with the Raspberry Pi](#Data-Science-and-Machine-Learning-with-the-Raspberry-Pi)
+    - [Data Science Process Applied to PRG550 Capstone Project](#Data-Science-Process-Applied-to-PRG550-Capstone-Project)
 
 
 ----------------------------------
@@ -94,16 +93,6 @@ Corresponding to these stages, this visualization overlays the data life cycle w
 
 - [Kamakshi Bagga](https://docs.google.com/document/d/1jl-R-YK1BnxMLtlHJFu1UDhwCx7puCqnxo_pYHpcq-M/edit)
 
-## Data Science and Machine Learning with the Raspberry Pi
-
-In the reminder of this course, we will use foundational skills from [Lecture 1](lecture01.md)
-,[Lecture 2](lecture02.md), [Lecture 3](lecture03.md), [Lecture 4](lecture04.md), [Lecture 5](lecture05.md), and [Lecture 6](lecture06.md) to build a system that makes real-time temperature predictions by collecting historical data, building a model, building a circuit for data capture, and writing Python code with your Raspberry Pi.  This diagram will be our [North Star](https://en.wikipedia.org/wiki/Polaris) to [guide us](https://hbr.org/2012/01/what-wise-leaders-always-follo) [^2][^3] to the end of the course.
-
-<p align="center">
-<img src="images/project_functional_diagram.png" alt="Raspbery Pi Temperature Prediction Functional Diagram" width="600" />
-</p>
-
-
 ## Data Science and ML Process
 
 Data science and machine learning is a iterative process.  It's important to keep in mind that there might not be "a right answer".  Often data science practitioners are faced with providing a *close-enough* result rather than the best result.  Similar to the stages in the [data lifecycle above](#Data-Life-Cycle), the overall data science process is made up of a series of steps.  One key difference to note is its cyclical nature.
@@ -111,17 +100,6 @@ Data science and machine learning is a iterative process.  It's important to kee
 <p align="center">
 <img src="images/data_science_process.png" alt="Data Science Process" width="500" />
 </p>
-
-## Data Science Process Applied to Our North Star
-
-|Process Step|Description|
-|:-----------|:----------|
-| 1. Problem statement | - use Pi to predict whether it will be hot or cold in Toronto using input from BMP280 module in Python (Pandas and scikit-learn) |
-| 2. Data Preparation | - acquire the right data <br> - data matches where you want to predict the weather (get toronto-based data) <br> - data cleaning and preparation (convert farenheit to celsius, fill in miss data) |
-| 3. Plan Model | - Classification: provide category prediction into one of several groups <br>- ~~Linear Regression: provide numerical prediction of temperature (ex: 25&deg;C)~~ (won't be usiing this type of model for PRG550)|
-| 4. Build Model | - use raw ingredients and build model<br>- write code with Pandas and scikit-learn |
-| 5. Analyze Results | - sanity check if results make sense to you|
-| 6. Share Results | - share results with broader team to see if results meet requirements in problem statement <br> - ask for feedback and ideas for improvement <br> - iterate through cycle again if needed |
 
 ## A Chef's Guide to the Data Science Process
 
@@ -136,6 +114,27 @@ The table below describes what a chef using the data science process might think
 | 5. Analyze Results | - taste test |
 | 6. Share Results | - share food with others and ask for feedback |
 
+
+## PRG550 Capstone Project
+### Data Science and Machine Learning with the Raspberry Pi
+
+In the reminder of this course, we will use foundational skills from [Lecture 1](lecture01.md)
+,[Lecture 2](lecture02.md), [Lecture 3](lecture03.md), [Lecture 4](lecture04.md), [Lecture 5](lecture05.md), and [Lecture 6](lecture06.md) to build a system that makes real-time temperature predictions by collecting historical data, building a model, building a circuit for data capture, and writing Python code with your Raspberry Pi.  This diagram will be our [North Star](https://en.wikipedia.org/wiki/Polaris) to [guide us](https://hbr.org/2012/01/what-wise-leaders-always-follo) [^2][^3] to the end of the course.
+
+<p align="center">
+<img src="images/project_functional_diagram.png" alt="Raspbery Pi Temperature Prediction Functional Diagram" width="600" />
+</p>
+
+### Data Science Process Applied to PRG550 Capstone Project
+
+|Process Step|Description|
+|:-----------|:----------|
+| 1. Problem statement | - use Pi to predict whether it will be hot or cold in Toronto using input from BMP280 module in Python (Pandas and scikit-learn) |
+| 2. Data Preparation | - acquire the right data <br> - data matches where you want to predict the weather (get toronto-based data) <br> - data cleaning and preparation (convert farenheit to celsius, fill in miss data) |
+| 3. Plan Model | - Classification: provide category prediction into one of several groups <br>- ~~Linear Regression: provide numerical prediction of temperature (ex: 25&deg;C)~~ (won't be usiing this type of model for PRG550)|
+| 4. Build Model | - use raw ingredients and build model<br>- write code with Pandas and scikit-learn |
+| 5. Analyze Results | - sanity check if results make sense to you|
+| 6. Share Results | - share results with broader team to see if results meet requirements in problem statement <br> - ask for feedback and ideas for improvement <br> - iterate through cycle again if needed |
 
 
 [^1]: [The Data Science Process, towardsdatascience.com](https://towardsdatascience.com/the-data-science-process-a19eb7ebc41b)

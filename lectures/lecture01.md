@@ -142,7 +142,7 @@ print('x // y = ', x // y) # Output: x // y = 3
 print('x ** y = ', x ** y) # Output: x ** y = 50625
 ```
 
-As in mathematics, parentheses `( )` can be used to alter the order
+As in mathematics, parentheses `()` can be used to alter the order
 of operations in a Python program.
 
 ```
@@ -305,7 +305,7 @@ The last example above demonstrates python variable referencing.  A good explana
 
 
 
-In Python, the `id( )` built-in function returns the "identity"
+In Python, the `id()` built-in function returns the "identity"
 of an object. This is an integer which is guaranteed to be unique
 and constant for this object during its lifetime.
 
@@ -320,7 +320,7 @@ population = input("Population of Toronto is? ")
 print(population, type(population))
 ```
 
-With one argument, the `type( )` built-in function returns the type of
+With one argument, the `type()` built-in function returns the type of
 an object. The return value is a type object and generally the same
 object as returned by `object.__class__`
 ```
@@ -381,7 +381,7 @@ else :
 
 Example using logical operators and / or
 ```
-if xValue >= 0 and yValue &gt;= 0 :
+if xValue >= 0 and yValue >= 0 :
     print("both", xValue, "and", yValue, "are positive numbers!")
 elif xValue >= 0 :
    print(xValue, "is a positive number!")
@@ -394,7 +394,7 @@ Example using logical operators and / or and nested controls
 ```
 year = int(input("enter a whole number year: "))
 ```
-NOTE: The `int( )` function is used to wrap the `input( )` function in order
+NOTE: The `int()` function is used to wrap the `input()` function in order
 to convert the string input to an integer
 ```
 if year % 400 == 0 :
@@ -435,30 +435,30 @@ The loop continues until the last item in the sequence is evaluated.
 The body of the for loop is separated from the rest of the code
 using indentation.
 
-The `range( )` function:
-To generate a sequence of numbers, the `range( )` function can be used.
+The `range()` function:
+To generate a sequence of numbers, the `range()` function can be used.
 - For example, `range(10)` will generate numbers from 0 to 9 (10 numbers).
-- The `range( )` function can also specify the start, stop and step size with:
+- The `range()` function can also specify the start, stop and step size with:
 `range(start, stop, step)` step defaults to 1 if not provided.
-- The `range( )` function does not store all the values in memory,
-- Instead, `range( )` remembers the start, stop, and step and generates
+- The `range()` function does not store all the values in memory,
+- Instead, `range()` remembers the start, stop, and step and generates
 the next number at runtime.
 
 Examples:
 ```
 for i in range(0, 9) :
    print(i, end="") # the end="" is used to suppress newlines
-print( )
+print()
 
 for i in range(0, 9, 2) : # step by 2 (i.e. 0, 2, 4, 6, 8)
    print(i, end="")
-print( )
+print()
 ```
 ```
 for i in range(ord('a'), ord('z') + 1) :
    print(chr(i), end="")
 # end
-print( )
+print()
 ```
 
 ## Python inline for loop
@@ -476,7 +476,7 @@ for i in range(1, 10):
    print(i, " ", end="")
 else:
    print("No more items to process...")
-print( )
+print()
 ```
 
 As with other programming languages, the `break` statement can be used
@@ -492,7 +492,7 @@ for i in range(1, 10):
    print(i, " ", end="")
 else:
    print("No more items to process...")
-print( )
+print()
 ```
 
 The `while` loop in Python is used to iterate over a block of code
@@ -565,12 +565,12 @@ ucLetters =  string.ascii_uppercase
 digits = string.digits
 
 str = "Apple INC."
-print("original string:", str, "swapcase( ):", str.swapcase( ))
-print("original string:", str, "title( ):", str.title( ))
-print("original string:", str, "upper( ):", str.upper( ))
-print("original string:", str, "lower( ):", str.lower( ))
+print("original string:", str, "swapcase():", str.swapcase())
+print("original string:", str, "title():", str.title())
+print("original string:", str, "upper():", str.upper())
+print("original string:", str, "lower():", str.lower())
 print("original string:", str, "join(['1', '2', '3']):", str.join(['1', '2', '3']))
-print("original string:", str, "reversed( ):", "".join(reversed(str)))
+print("original string:", str, "reversed():", "".join(reversed(str)))
 print("original str:", str)
 ```
 

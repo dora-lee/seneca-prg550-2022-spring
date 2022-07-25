@@ -17,9 +17,9 @@ Monday July 4, 2022
 
 - [What is Machine Learning?](#What-is-Machine-Learning?)
 - [Career Roles in Data Science](#Career-Roles-in-Data-Science)
-    - [Career Roles and the Data Life Cycle](#Career-Roles-and-the-Data-Life-Cycle)
-    - [Career Profile: Data Scientist at Shopify](Career-Profile-Data-Scientist-at-Shopify)
-- [Data Science and ML Process](#Data-Science-and-ML-Process)
+    - [Career Roles and Stages in the Data Science Process](#Career-Roles-and-Stages-in-the-Data-Science-Process)
+    - [Career Profile: Data Scientist at Shopify](#Career-Profile-Data-Scientist-at-Shopify)
+- [Data Science and ML](#Data-Science-and-ML)
 - [A Chef's Guide to the Data Science Process](#A-Chef's-Guide-to-the-Data-Science-Process)
 - [PRG550 Capstone Project](#PRG550-Capstone-Project)
     - [Data Science and Machine Learning with the Raspberry Pi](#Data-Science-and-Machine-Learning-with-the-Raspberry-Pi)
@@ -82,9 +82,9 @@ Career roles in data science are largely intertwined with stages in the data lif
 
 We will go deeper into each of the above stages later on in the class.
 
-Corresponding to these stages, this visualization overlays the data life cycle with four main categories of career roles [^1].
+Corresponding to these stages, this visualization overlays the stages of the data process with four main categories of career roles [^1].
 
-### Career Roles and the Data Life Cycle
+### Career Roles and Stages in the Data Science Process
 <p align="center">
 <img src="images/data_science_roles.png" alt="Career Roles in Data Science" width="600" />
 </p>
@@ -93,9 +93,11 @@ Corresponding to these stages, this visualization overlays the data life cycle w
 
 - [Kamakshi Bagga](https://docs.google.com/document/d/1jl-R-YK1BnxMLtlHJFu1UDhwCx7puCqnxo_pYHpcq-M/edit)
 
-## Data Science and ML Process
+## Data Science and ML
 
-Data science and machine learning is a iterative process.  It's important to keep in mind that there might not be "a right answer".  Often data science practitioners are faced with providing a *close-enough* result rather than the best result.  Similar to the stages in the [data lifecycle above](#Data-Life-Cycle), the overall data science process is made up of a series of steps.  One key difference to note is its cyclical nature.
+Data science is an iterative process involving several stages, each of which can be major sub-projects on its own.  Machine Learning (ML) is just one tool among many to help shed light into what data can reveal about the problem you're trying to solve.
+
+It's important to keep in mind that there might not be "a right answer".  Often data science practitioners are faced with providing a *close-enough* result rather than the best result.  Similar to the stages in the data process above, the overall data science process is made up of a series of steps.  One key difference to note is its cyclical nature.  A new pass through the cycle is taken when exploring a different technique to improve the approach that was taken.
 
 <p align="center">
 <img src="images/data_science_process.png" alt="Data Science Process" width="500" />

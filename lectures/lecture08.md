@@ -18,6 +18,15 @@ Monday July 25, 2022
 
 ## Page Contents
 
+- [Stages in the Data Science Process](#Stages-in-the-Data-Science-Process)
+    - [Data Collection](#Data-Collection)
+    - [Data Cleaning](#Data-Cleaning-1)
+    - [Titanic Dataset](#Titanic-Dataset)
+    - [Data Exploration and Analysis](#Data-Exploration-and-Analysis)
+- [PRG550 Capstone Project](#PRG550-Capstone-Project)
+    - [Data Collection, Cleaning, and Exploration](#Data-Collection,-Cleaning,-and-Exploration)
+- [Class Exercise A](#Class-Exercise-A)
+- [Class Exercise B](#Class-Exercise-B)
 
 
 ----------------------------------
@@ -63,7 +72,7 @@ When evaluating pre-existing datasets, it's important to select a reliable sourc
 For this lecture the [the Titanic dataset from Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html) will be used.
 
 
-### Data Cleaning
+### Data Cleaning [^1]
 
 Data cleaning is an important step to prepare data for analysis.  If input data is poor quality, any resulting analysis will also be poor (ie garbage in, garbage out).
 
@@ -168,3 +177,5 @@ titanic.target
 ## Class Exercise B
 List other data sites that could provide labelled weather data.  What weather labels do they provide?
 
+
+[^1]: https://www.springboard.com/blog/data-analytics/data-cleaning/

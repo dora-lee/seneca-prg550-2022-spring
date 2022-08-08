@@ -21,8 +21,8 @@ This is the course home page for **Programming Python with the Raspberry Pi** [^
 | 10 | 11-Jul-2022 | Catch-up week |
 | 11 | 18-Jul-2022 | [Lecture Test Released](http://www.doralee.ca/courses/prg550/lectureTest/prg550.222.lectureTest.html) <br> [Using Lynx to submit Lecture Test](labs/grader-mock-test.md) |
 | 12 | 25-Jul-2022 | [Lecture 8](../main/lectures/lecture08.md) <br> [Lab 7 Assigned](labs/lab07.md)|
-| 13 | 01-Aug-2022 | **_Holiday: no Monday lecture, labs proceed as scheduled_** <br>|
-| 14 | 08-Aug-2022 | [Lecture 9](../main/lectures/lecture09.md) <br> [Assignment #2 Released](../main/project/assignment02.md) <br> Lab Test 2 |
+| 13 | 01-Aug-2022 | **_Holiday: no Monday lecture, labs proceed as scheduled_** <br> [Lecture 9](../main/lectures/lecture09.md)|
+| 14 | 08-Aug-2022 |  [Assignment #2 Released](../main/project/assignment02.md) <br> Lab Test 2 |
 | 15 | 15-Aug-2022 | Assignment 2 Presentations |
 
 ## References
